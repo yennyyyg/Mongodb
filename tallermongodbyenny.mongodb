@@ -111,10 +111,13 @@ lte= lower than equal <=
 //db.empleados.find({})
 
 
-//Actividad:
+//                                            ACTIVIDAD
+
+
 //1. Insertar un documento en la colección de empleados
 db.empleados.insertOne({'_id': 55, 'nombre': 'Yenny',   'apellido': 'Gonzalez', 'Cargo': 'Practicante', 'Nomina': 2000000, 'fechadecontratación':new Date('2015-02-06T20:45:13Z'), 'estado':true,"empresaN": 'LG'})
 db.empleados.find({});
+
 //2. Insertar dos documentos en la colección de empleados
 
 db.empleados.insertMany([
@@ -134,9 +137,6 @@ const collectione = 'Empresa';
 use(database);
 // Create a new collection.
 db.createCollection(collectione);
-//-------------------------------------------Eliminar tabla--------------
-
-db.Empresa.drop();
 
 
 //4. insertar cuatro empresas en la colección empresa   
@@ -204,11 +204,13 @@ db.Empresa.updateMany({'empresaN':'LG'},{$set: {
 }})
 
 db.Empresa.find({})
+
 //9. Consultar todos los empleados que su sueldo este entre $1000000 y $6000000
 
 db.getCollection("empleados").find({"Nomina": {$gt:1000000}})
 
 //10. sumar todos los sueldos de los empleados de la empresa "Universidad Ean"
+
 db.empleados.aggregate({
     /**
      * _id: The id of the group.
